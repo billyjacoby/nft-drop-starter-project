@@ -1,18 +1,25 @@
-import React from 'react';
-import './App.css';
-import twitterLogo from './assets/twitter-logo.svg';
+import { useState, useEffect } from "react";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+
+import "./App.css";
+import twitterLogo from "./assets/twitter-logo.svg";
 
 // Constants
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
+  const { publicKey } = useWallet();
+
+  console.log("publicKey: ", publicKey?.toString());
   return (
     <div className="App">
       <div className="container">
         <div className="header-container">
           <p className="header">🍭 Candy Drop</p>
           <p className="sub-text">NFT drop machine with fair mint</p>
+          <WalletMultiButton style={{ margin: "auto" }} />
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
