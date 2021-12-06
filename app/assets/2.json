@@ -1,0 +1,19 @@
+{
+  "name": "Moon Girl - Moon Person",
+  "symbol": "MG",
+  "image": "2.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "2.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "8q4C3pRSa4eoZhZq9G2hskfpkkMykMqofrUjWnmjA6ss",
+        "share": 100
+      }
+    ]
+  }
+}

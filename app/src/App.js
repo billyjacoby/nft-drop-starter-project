@@ -4,6 +4,9 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 import "./App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
+import CandyMachine from "./CandyMachine";
+
+// 4c4AedqcuVWMPRoBfh5dByg7QvcigMSxw2UjokRfXUnY
 
 // Constants
 const TWITTER_HANDLE = "_buildspace";
@@ -11,8 +14,6 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-
-  console.log("publicKey: ", publicKey?.toString());
   return (
     <div className="App">
       <div className="container">
@@ -20,6 +21,7 @@ const App = () => {
           <p className="header">🍭 Candy Drop</p>
           <p className="sub-text">NFT drop machine with fair mint</p>
           <WalletMultiButton style={{ margin: "auto" }} />
+          {publicKey && <CandyMachine />}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
